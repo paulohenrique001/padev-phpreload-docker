@@ -1,0 +1,19 @@
+FROM php:7.4-apache
+
+COPY ./src /var/www/html/
+
+#composer
+# COPY --from=composer /usr/bin/composer /usr/bin/composer
+
+#install unzip utility and libs needed by zip PHP extension 
+# RUN apt-get update && apt-get install -y \
+#     zlib1g-dev \
+#     libzip-dev \
+#     unzip
+
+# RUN docker-php-ext-install zip
+
+#habilita 'mod_rewrite' e permite uso de '.htaccess'
+RUN echo "habilita 'mod_rewrite' e permite uso de '.htaccess'" \
+    && cp /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/ \
+    && sed -i '172s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf

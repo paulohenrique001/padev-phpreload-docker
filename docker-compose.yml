@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  website:
+    container_name: "${WEB_NAME}"
+    build:
+      context: "./"
+      dockerfile: "Dockerfile.${WEB_PROFILES_ACTIVE}"
+    image: "${WEB_NAME}:${WEB_VERSION}"
+    ports:
+      - "${WEB_PUBLISHED_PORT}:${WEB_TARGET_PORT}"
+    volumes:
+      - "./src:/var/www/html"
