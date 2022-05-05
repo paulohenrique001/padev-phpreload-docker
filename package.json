@@ -1,9 +1,10 @@
 {
-  "name": "livereload-docker",
+  "name": "padev-phpreload-docker",
   "version": "1.0.0",
   "description": "<!-- command inspect config image -->\r docker-compose --env-file .env.dev config",
   "main": "index.js",
   "scripts": {
+    "padev": "node ./fsreload.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
