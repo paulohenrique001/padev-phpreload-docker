@@ -1,5 +1,7 @@
 {
+    "socker_port": 9000,
     "path": "./src",
     "watch": "file",
-    "ignore": []
+    "ignore": [],
+    "timeout": 0
 }

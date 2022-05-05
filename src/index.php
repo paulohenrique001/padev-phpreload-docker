@@ -11,17 +11,7 @@
 <body>
     <h1>PHP Live Reload - Padev</h1>
 
-    <script type="module">
-        import {
-            io
-        } from "https://cdn.socket.io/4.5.0/socket.io.esm.min.js";
-        const socket = io("http://127.0.0.1:3000");
-
-        socket.emit("watchFile", "<?= $_SERVER['SCRIPT_NAME'] ?>");
-        socket.on("reload", () => {
-            location.reload();
-        });
-    </script>
+    <script id="padev-phpreload" watchFile="<?= $_SERVER['SCRIPT_NAME'] ?>" type="module" src="http://127.0.0.1:3000"></script>
 </body>
 
 </html>
